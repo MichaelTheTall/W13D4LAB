@@ -77,4 +77,3 @@ public class Customer {
         this.customerBookingList = customerBookingList;
     }
 }
-

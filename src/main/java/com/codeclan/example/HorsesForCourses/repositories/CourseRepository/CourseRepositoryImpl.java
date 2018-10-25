@@ -1,6 +1,7 @@
 package com.codeclan.example.HorsesForCourses.repositories.CourseRepository;
 
 import com.codeclan.example.HorsesForCourses.models.Course;
+import com.codeclan.example.HorsesForCourses.models.Customer;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -23,6 +24,25 @@ public class CourseRepositoryImpl implements CourseRepositoryCustom {
         try {
             Criteria cr = session.createCriteria(Course.class);
             cr.add(Restrictions.eq("rating", rating));
+            results = cr.list();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            session.close();
+        }
+
+        return results;
+    }
+
+    @Transactional
+    public List<Course> getCoursesForCustomer(Long id){
+        List<Course> results = null;
+        Session session = entityManager.unwrap(Session.class);
+
+        try {
+            Criteria cr = session.createCriteria(Course.class);
+            cr.createAlias("courseBookingList", "booking");
+            cr.add(Restrictions.eq("booking.customer.id", id));
             results = cr.list();
         } catch (Exception ex) {
             ex.printStackTrace();

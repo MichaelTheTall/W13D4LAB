@@ -39,4 +39,9 @@ public class HorsesForCoursesApplicationTests {
 	public void canGetCustomersByCourse() {
 		List<Customer> results = customerRepository.getCustomerByCourse(2L);
 	}
+
+	@Test
+	public void canGetCoursesByCustomer() {
+		List<Course> results = courseRepository.getCoursesForCustomer(2L);
+	}
 }

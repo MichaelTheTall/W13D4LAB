@@ -1,5 +1,6 @@
 package com.codeclan.example.HorsesForCourses;
 
+import com.codeclan.example.HorsesForCourses.models.Booking;
 import com.codeclan.example.HorsesForCourses.models.Course;
 import com.codeclan.example.HorsesForCourses.models.Customer;
 import com.codeclan.example.HorsesForCourses.repositories.BookingRepository.BookingRepository;
@@ -43,5 +44,10 @@ public class HorsesForCoursesApplicationTests {
 	@Test
 	public void canGetCoursesByCustomer() {
 		List<Course> results = courseRepository.getCoursesForCustomer(2L);
+	}
+
+	@Test
+	public void canGetBookingsByDate() {
+		List<Booking> results = bookingRepository.getBookingsByDate("04-09-2018");
 	}
 }

@@ -47,6 +47,5 @@ public class Dataloader implements ApplicationRunner {
         bookingRepository.save(booking1);
         bookingRepository.save(booking2);
         bookingRepository.save(booking3);
-
     }
 }

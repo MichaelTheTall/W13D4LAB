@@ -25,7 +25,7 @@ public class Course {
 
     @JsonIgnore
     @OneToMany(mappedBy = "course")
-    private List<Booking> bookingList;
+    private List<Booking> courseBookingList;
 
     public Course() {
     }
@@ -34,7 +34,7 @@ public class Course {
         this.name = name;
         this.town = town;
         this.rating = rating;
-        this.bookingList = new ArrayList<>();
+        this.courseBookingList = new ArrayList<>();
     }
 
     public Long getId() {
@@ -69,11 +69,11 @@ public class Course {
         this.rating = rating;
     }
 
-    public List<Booking> getBookingList() {
-        return bookingList;
+    public List<Booking> getcourseBookingList() {
+        return courseBookingList;
     }
 
-    public void setBookingList(List<Booking> bookingList) {
-        this.bookingList = bookingList;
+    public void setcourseBookingList(List<Booking> courseBookingList) {
+        this.courseBookingList = courseBookingList;
     }
 }

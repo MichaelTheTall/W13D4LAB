@@ -1,4 +1,4 @@
 package com.codeclan.example.HorsesForCourses.repositories.CustomerRepository;
 
-public class CustomerRepositoryImpl {
+public class CustomerRepositoryImpl implements CustomerRepositoryCustom {
 }

@@ -50,4 +50,9 @@ public class HorsesForCoursesApplicationTests {
 	public void canGetBookingsByDate() {
 		List<Booking> results = bookingRepository.getBookingsByDate("04-09-2018");
 	}
+
+	@Test
+	public void canGetCustomerInTownOnCourse() {
+		List<Customer> results = customerRepository.getCustomerByTownAndCourse("glasgow", 1L);
+	}
 }

@@ -55,4 +55,9 @@ public class HorsesForCoursesApplicationTests {
 	public void canGetCustomerInTownOnCourse() {
 		List<Customer> results = customerRepository.getCustomerByTownAndCourse("glasgow", 1L);
 	}
+
+	@Test
+	public void canGetCustomerOverAgeInTownOnCourse() {
+		List<Customer> results = customerRepository.getCustomerOverAgeByTownAndCourse(28, "edinburgh", 2L);
+	}
 }
